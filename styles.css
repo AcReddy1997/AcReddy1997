@@ -1,0 +1,136 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    transition: background-color 0.5s ease;
+}
+
+#wrapper {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 10px 0;
+    color: #2c3e50;
+}
+
+header p {
+    color: #7f8c8d;
+}
+
+h2.section-title {
+    font-size: 1.75em;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+h2.section-title:hover {
+    color: #1abc9c;
+}
+
+/* .section-content, */
+.job-details {
+    display: none; /* Initially hidden */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-title {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #2c3e50;
+    cursor: pointer;
+}
+
+.project-details {
+    display: none;
+    margin-top: 10px;
+    color: #34495e;
+    transition: all 0.5s ease;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 15px;
+}
+
+.job-title {
+    cursor: pointer;
+    color: #2c3e50;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.job-title:hover {
+    color: #1abc9c;
+}
+
+.company-logo {
+    width: 50px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.certifications-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.certification-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.certification-text {
+    flex: 2;
+    padding-right: 10px;
+}
+
+.certification-badges {
+    flex-shrink: 5;
+}
+
+.cert-badge {
+    width: 70px;
+    height: auto;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.icons {
+    list-style-type: none;
+    padding: 0;
+}
+
+.icons li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.icons a {
+    text-decoration: none;
+    color: #34495e;
+    font-size: 1.5em;
+}
