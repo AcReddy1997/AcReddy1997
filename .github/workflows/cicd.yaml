@@ -12,6 +12,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@master
       
+      - name: Check if SOURCE_DIR exists
+        run: |
+          if [ ! -d "${{ env.SOURCE_DIR }}" ]; then
+            echo "Error: Directory ${{ env.SOURCE_DIR }} does not exist."
+            exit 1
+          fi
+        env:
+          SOURCE_DIR: 'acreddy.me'
+      
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
@@ -27,4 +36,4 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: 'us-east-1'
-          SOURCE_DIR: 'acreddy.me'
+          SOURCE_DIR: 'acreddy.me/'
