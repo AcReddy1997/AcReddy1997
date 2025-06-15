@@ -11,12 +11,6 @@
 
 <br clear="both">
 
-<img src="https://raw.githubusercontent.com/acreddy1997/acreddy1997/output/snake.svg" alt="Snake animation" />
-
-###
-
-<br clear="both">
-
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs?username=acreddy1997&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dracula&hide_border=false&order=2" height="150" alt="languages graph"  />
   <img src="https://streak-stats.demolab.com?user=acreddy1997&locale=en&mode=daily&theme=dracula&hide_border=false&border_radius=5&order=3" height="150" alt="streak graph"  />
@@ -75,6 +69,14 @@
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" height="40" alt="visualstudio logo"  />
 </div>
+
+###
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/acreddy1997/acreddy1997/output/pacman-contribution-graph-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/acreddy1997/acreddy1997/output/pacman-contribution-graph.svg">
+  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/acreddy1997/acreddy1997/output/pacman-contribution-graph.svg">
+</picture>
 
 ###
 
