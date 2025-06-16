@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle-checkbox');
     const body = document.body;
 
-    // Function to apply the saved theme on load
     const applySavedTheme = () => {
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
@@ -16,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Event listener for the theme toggle switch
     themeToggle.addEventListener('change', () => {
         if (themeToggle.checked) {
             body.classList.add('dark-mode');
@@ -27,8 +25,34 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Apply theme on initial load
     applySavedTheme();
+
+    // --- VIEW TOGGLE FUNCTIONALITY ---
+    const viewToggle = document.getElementById('view-toggle-checkbox');
+    
+    const applySavedView = () => {
+        const savedView = localStorage.getItem('view');
+        // Default to recruiter view unless 'technical' is explicitly saved
+        if (savedView === 'technical') {
+            body.classList.remove('recruiter-mode-active');
+            viewToggle.checked = false;
+        } else {
+            body.classList.add('recruiter-mode-active');
+            viewToggle.checked = true;
+        }
+    };
+
+    viewToggle.addEventListener('change', () => {
+        if (viewToggle.checked) {
+            body.classList.add('recruiter-mode-active');
+            localStorage.setItem('view', 'recruiter');
+        } else {
+            body.classList.remove('recruiter-mode-active');
+            localStorage.setItem('view', 'technical');
+        }
+    });
+    
+    applySavedView();
 
 
     // --- SCROLL REVEAL ANIMATION ---
@@ -37,37 +61,14 @@ document.addEventListener('DOMContentLoaded', function() {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
             }
-            // Optional: To make animation repeat every time it scrolls into view
-            // else {
-            //     entry.target.classList.remove('visible');
-            // }
         });
     }, {
-        threshold: 0.1 // Trigger when 10% of the element is visible
+        threshold: 0.1
     });
 
     const hiddenElements = document.querySelectorAll('.hidden');
     hiddenElements.forEach((el) => observer.observe(el));
     
-
-    // // --- VISITOR COUNTER FUNCTIONALITY ---
-    // const counter = document.querySelector(".counter-number");
-    // async function updateCounter() {
-    //     try {
-    //         let response = await fetch("https://nnrqifw6sbzmtw74noap5uoexu0njlkj.lambda-url.us-east-1.on.aws/");
-    //         if (!response.ok) {
-    //             throw new Error(`HTTP error! status: ${response.status}`);
-    //         }
-    //         let data = await response.json();
-    //         counter.innerHTML = `${data.views}`;
-    //     } catch (error) {
-    //         console.error("Failed to fetch visitor count:", error);
-    //         counter.innerHTML = "N/A";
-    //     }
-    // }
-
-    // updateCounter();
-
 
     // --- MOBILE NAVIGATION (HAMBURGER MENU) ---
     const hamburger = document.querySelector('.hamburger');
@@ -76,7 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     hamburger.addEventListener('click', () => {
         navMenuContainer.classList.toggle('active');
-        // Simple toggle between bars and times icon
         if (navMenuContainer.classList.contains('active')) {
              hamburger.innerHTML = '<i class="fas fa-times"></i>';
         } else {
@@ -84,7 +84,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Close menu when a link is clicked
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (navMenuContainer.classList.contains('active')) {

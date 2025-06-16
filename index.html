@@ -56,7 +56,12 @@
                 <div class="hero-content hidden">
                     <p class="hero-intro">Hello, I'm</p>
                     <h1>Arjuna C. Reddy.</h1>
-                    <p class="hero-subtitle">Cloud & Systems Engineer | AWS Certified</p>
+                    <div class="view-technical">
+                         <p class="hero-subtitle">Cloud & Systems Engineer | AWS Certified</p>
+                    </div>
+                    <div class="view-recruiter">
+                        <p class="hero-subtitle">Cloud, DevOps, & 5G Wireless Engineering</p>
+                    </div>
                     <a href="#projects" class="hero-button">View My Work</a>
                 </div>
             </header>
@@ -64,51 +69,82 @@
             <!-- About Section -->
             <section id="about" class="content-section hidden">
                 <h2 class="section-title">About Me</h2>
-                <p>Some see problems; I see puzzles waiting to be solved. Armed with a Master’s in Electrical and Computer Engineering and experience across major tech companies like PwC and Cognizant, I specialize in unraveling the complexities of cloud computing, security, and DevOps. If there’s one thing you should know about me, it’s this: I don’t just find solutions—I build them.</p>
+                <div class="view-technical">
+                    <p>Some see problems; I see puzzles waiting to be solved. Armed with a Master’s in Electrical and Computer Engineering and experience across major tech companies like PwC and Cognizant, I specialize in unraveling the complexities of cloud computing, security, and DevOps. If there’s one thing you should know about me, it’s this: I don’t just find solutions—I build them.</p>
+                </div>
+                <div class="view-recruiter">
+                    <p>A solutions-driven engineer with a Master’s in Electrical and Computer Engineering and a passion for cloud infrastructure, DevOps automation, and next-generation wireless technologies. My experience is centered on building resilient, scalable systems and optimizing network performance to drive business success.</p>
+                </div>
+                
+                <div class="view-toggle-container">
+                    <span class="toggle-label">Deep Dive View</span>
+                    <label class="switch view-switch">
+                        <input type="checkbox" id="view-toggle-checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="toggle-label">Recruiter View</span>
+                </div>
             </section>
 
             <!-- Experience Section -->
             <section id="experience" class="content-section hidden">
                 <h2 class="section-title">Experience</h2>
                 <div class="experience-timeline">
+                    <!-- SDSU -->
                     <div class="timeline-item hidden">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
                             <p class="timeline-date">March 2023 – Present</p>
                             <h3 class="job-title">Systems Administrator</h3>
                             <p class="company">San Diego State University</p>
-                            <ul class="job-details-list">
+                            <ul class="job-details-list view-technical">
                                 <li>Achieved a 40% increase in deployment efficiency using user needs and automation scripts (Python/Bash) as measured by streamlined desktop rollouts and adherence to best practices in technical documentation and quality standards.</li>
                                 <li>Accomplished a 15% boost in user satisfaction using cross-functional collaboration and proactive troubleshooting of hardware and networking issues as measured by positive survey feedback and on-time project completion.</li>
                            </ul>
+                           <ul class="job-details-list view-recruiter">
+                                <li>Increased deployment efficiency by 40% through Python/Bash automation.</li>
+                                <li>Boosted user satisfaction by 15% via proactive hardware and network troubleshooting.</li>
+                           </ul>
                         </div>
                     </div>
+                    <!-- PwC -->
                     <div class="timeline-item hidden">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
                             <p class="timeline-date">June 2021 – July 2022</p>
                             <h3 class="job-title">Associate</h3>
                             <p class="company">PwC</p>
-                            <ul class="job-details-list">
+                            <ul class="job-details-list view-technical">
                                 <li>Optimized cloud infrastructure for over 30 clients on Google Cloud Platform (GCP), reducing cloud costs by 50% and enhancing system performance by 25%.</li>
                                 <li>Implemented a Git-based Jenkins CI/CD pipeline for multiple Fortune 500 clients, reducing deployment time by 30% and increasing successful deployments by 15%.</li>
                                 <li>Led the implementation of a comprehensive security incident response program, reducing security incidents by 30% and managed the Auth0 platform for over 50,000 users.</li>
                                 <li>Conducted regular system checks and proactive space monitoring on OCI, eliminating space errors and improving database performance by 35% to achieve 99.99% availability.</li>
                                 <li>Orchestrated the successful deployment of security protocols, including IAM solutions and MFA, across multiple client environments, enhancing overall security posture by 50%.</li>
                             </ul>
+                            <ul class="job-details-list view-recruiter">
+                                <li>Reduced cloud costs by 50% for 30+ clients on GCP through infrastructure optimization.</li>
+                                <li>Cut deployment times by 30% and security incidents by 30% by implementing CI/CD pipelines.</li>
+                                <li>Enhanced security posture by 50% by deploying IAM and MFA solutions for over 50,000 users.</li>
+                            </ul>
                         </div>
                     </div>
+                    <!-- Cognizant -->
                     <div class="timeline-item hidden">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
                              <p class="timeline-date">July 2019 – May 2021</p>
                             <h3 class="job-title">Administrator</h3>
                              <p class="company">Cognizant Technology Solutions</p>
-                            <ul class="job-details-list">
+                            <ul class="job-details-list view-technical">
                                 <li>Enhanced overall database performance on Oracle Cloud Infrastructure (OCI) by 35% through meticulous monitoring, patch management, and space allocation, achieving 99.99% availability.</li>
                                 <li>Fortified security measures across Oracle ERP systems, leading to a 50% decrease in unauthorized access incidents by implementing comprehensive IAM solutions for over 50,000 users.</li>
                                 <li>Streamlined incident response times by 60% as part of a 24/7 on-call rotation, employing Oracle Enterprise Manager to swiftly monitor and resolve issues.</li>
                                 <li>Minimized downtime by 30% and increased operational efficiency by 20% through regular system health checks, PSU patching, and strategic use of hot backups (RMAN, Data Pump).</li>
+                            </ul>
+                             <ul class="job-details-list view-recruiter">
+                                <li>Improved database performance on OCI by 35% and achieved 99.99% availability.</li>
+                                <li>Decreased unauthorized access incidents by 50% by implementing robust IAM solutions.</li>
+                                <li>Reduced incident response times by 60% in a 24/7 on-call support environment.</li>
                             </ul>
                         </div>
                     </div>
@@ -117,7 +153,7 @@
 
             <!-- Academic Projects Section -->
             <section id="projects" class="content-section hidden">
-                <h2 class="section-title">Academic Projects</h2>
+                <h2 class="section-title">Projects</h2>
                 <div class="project-grid">
                     <div class="project-card hidden">
                         <div class="card-inner">
@@ -128,8 +164,10 @@
                                 </div>
                             </div>
                             <div class="card-back">
-                                <h3>Cloud Resume Project</h3>
-                                <p>Engineered a secure, serverless resume website on AWS with a CI/CD pipeline using GitHub Actions. Automated infrastructure deployment with AWS SAM, reducing deployment times by 60%, and implemented a real-time visitor counter with Lambda and DynamoDB.</p>
+                                <h3 class="view-technical">Cloud Resume Project</h3>
+                                <p class="view-technical">Engineered a secure, serverless resume website on AWS with a CI/CD pipeline using GitHub Actions. Automated infrastructure deployment with AWS SAM, reducing deployment times by 60%, and implemented a real-time visitor counter with Lambda and DynamoDB.</p>
+                                <h3 class="view-recruiter">Cloud Resume Project</h3>
+                                <p class="view-recruiter">Engineered a secure, serverless website on AWS with a full CI/CD pipeline. Automated infrastructure deployment with AWS SAM and GitHub Actions, reducing deployment times by 60% and implementing a real-time visitor counter with Lambda.</p>
                             </div>
                         </div>
                     </div>
@@ -142,8 +180,10 @@
                                 </div>
                             </div>
                             <div class="card-back">
-                                <h3>Django Blog Application</h3>
-                                <p>Engineered and deployed a secure network infrastructure for a Django application, improving reliability by 30%. Strengthened system security by 50% through IAM roles and encryption, while reducing latency by 25% via network performance tuning and DNS management.</p>
+                                <h3 class="view-technical">Django Blog Application</h3>
+                                <p class="view-technical">Engineered and deployed a secure network infrastructure for a Django application, improving reliability by 30%. Strengthened system security by 50% through IAM roles and encryption, while reducing latency by 25% via network performance tuning and DNS management.</p>
+                                <h3 class="view-recruiter">Django App Infrastructure</h3>
+                                <p class="view-recruiter">Engineered and deployed a secure network infrastructure for a Django application, improving reliability by 30%. Strengthened system security by 50% through IAM roles and encryption, while reducing latency by 25% via network performance tuning.</p>
                             </div>
                         </div>
                     </div>
@@ -266,42 +306,103 @@
             <section id="skills" class="content-section hidden">
                 <h2 class="section-title">Core Competencies</h2>
                 <div class="skills-container">
-                    <div class="skill-category">
-                        <h3>Cloud & DevOps Engineering</h3>
+                    <!-- Technical View Content -->
+                    <div class="skill-card view-technical">
+                        <div class="skill-card-header">
+                            <i class="fas fa-cloud skill-icon"></i>
+                            <h3>Cloud & DevOps</h3>
+                        </div>
                         <ul>
-                            <li><strong>Cloud Platforms:</strong> AWS, GCP, Oracle Cloud (OCI)</li>
+                            <li><strong>Platforms:</strong> AWS, GCP, Oracle Cloud (OCI)</li>
                             <li><strong>Infrastructure as Code:</strong> Terraform, AWS SAM, Ansible</li>
                             <li><strong>CI/CD:</strong> Jenkins, GitHub Actions</li>
                             <li><strong>Containers:</strong> Docker, Kubernetes</li>
-                            <li><strong>AWS Services:</strong> EC2, S3, VPC, RDS, IAM, Route53, Lambda, CloudFront</li>
-                             <li><strong>Disaster Recovery:</strong> Load balancing, Failover, Replication, Backup/Recovery Planning</li>
+                            <li><strong>Services:</strong> EC2, S3, VPC, RDS, IAM, Route53, Lambda</li>
+                            <li><strong>Disaster Recovery:</strong> Failover, Replication, Backup/Recovery</li>
                         </ul>
                     </div>
-                     <div class="skill-category">
-                        <h3>Networking & Telecommunications</h3>
+                     <div class="skill-card view-technical">
+                        <div class="skill-card-header">
+                            <i class="fas fa-network-wired skill-icon"></i>
+                            <h3>Networking</h3>
+                        </div>
                         <ul>
-                            <li><strong>Protocols:</strong> TCP/IP, BGP, OSPF, DNS, DHCP, HTTP/S, UDP, ARP</li>
-                            <li><strong>Infrastructure:</strong> LAN/WAN, Firewalls, VPN, Subnetting, NAT, QoS</li>
+                            <li><strong>Protocols:</strong> TCP/IP, BGP, OSPF, DNS, DHCP, UDP</li>
+                            <li><strong>Infrastructure:</strong> LAN/WAN, Firewalls, VPN, Subnetting, NAT</li>
                             <li><strong>Tools:</strong> Wireshark, Cisco Packet Tracer, Nmap</li>
-                            <li><strong>Concepts:</strong> Network Security, WAN Optimization, Switching</li>
+                            <li><strong>Concepts:</strong> Network Security, WAN Optimization</li>
                         </ul>
                     </div>
-                     <div class="skill-category">
-                        <h3>Wireless & RF Engineering</h3>
+                     <div class="skill-card view-technical">
+                        <div class="skill-card-header">
+                            <i class="fas fa-satellite-dish skill-icon"></i>
+                            <h3>Wireless & RF</h3>
+                        </div>
                         <ul>
                             <li><strong>Technologies:</strong> 5G NR, LTE, Wi-Fi (802.11)</li>
                             <li><strong>Concepts:</strong> OFDM, MIMO, Beamforming, RF Propagation</li>
-                            <li><strong>Testing:</strong> Call Flow Analysis, QoS Analysis, RF Testing</li>
+                            <li><strong>Testing:</strong> Call Flow Analysis, QoS Analysis</li>
                             <li><strong>Simulation:</strong> MATLAB, VHDL, Verilog</li>
                         </ul>
                     </div>
-                    <div class="skill-category">
-                        <h3>Systems, Security & IT Support</h3>
+                    <div class="skill-card view-technical">
+                        <div class="skill-card-header">
+                             <i class="fas fa-cogs skill-icon"></i>
+                            <h3>Systems & Languages</h3>
+                        </div>
                         <ul>
                             <li><strong>OS:</strong> Windows, Linux, MacOS</li>
-                            <li><strong>Languages:</strong> Python, C, SQL, Bash, PowerShell, HTML/CSS, JavaScript</li>
-                            <li><strong>Security:</strong> IAM, SAML/OAuth, MFA, Okta-Auth0, SSL/TLS</li>
-                            <li><strong>Support & Tools:</strong> JIRA, ServiceNow, Git, VMware, Power BI</li>
+                            <li><strong>Languages:</strong> Python, C, SQL, Bash, PowerShell</li>
+                            <li><strong>Security:</strong> IAM, SAML/OAuth, MFA, SSL/TLS</li>
+                            <li><strong>Tools:</strong> Git, JIRA, ServiceNow, VMware</li>
+                        </ul>
+                    </div>
+                    <!-- Recruiter View Content -->
+                    <div class="skill-card view-recruiter">
+                        <div class="skill-card-header">
+                            <i class="fas fa-cloud skill-icon"></i>
+                            <h3>Cloud & DevOps</h3>
+                        </div>
+                        <ul>
+                            <li><strong>Cloud Platforms:</strong> AWS, GCP, OCI</li>
+                            <li><strong>IaC:</strong> Terraform, Ansible</li>
+                            <li><strong>CI/CD:</strong> Jenkins, GitHub Actions</li>
+                            <li><strong>Containers:</strong> Docker, Kubernetes</li>
+                        </ul>
+                    </div>
+                     <div class="skill-card view-recruiter">
+                        <div class="skill-card-header">
+                            <i class="fas fa-satellite-dish skill-icon"></i>
+                            <h3>5G, Wireless & Networking</h3>
+                        </div>
+                        <ul>
+                            <li><strong>Technologies:</strong> 5G NR, LTE, Wi-Fi</li>
+                            <li><strong>Protocols:</strong> TCP/IP, BGP, OSPF, DNS</li>
+                            <li><strong>Tools:</strong> Wireshark, Packet Tracer</li>
+                            <li><strong>Concepts:</strong> RF Simulation, Network Security</li>
+                        </ul>
+                    </div>
+                     <div class="skill-card view-recruiter">
+                        <div class="skill-card-header">
+                            <i class="fas fa-shield-halved skill-icon"></i>
+                            <h3>Security</h3>
+                        </div>
+                        <ul>
+                            <li><strong>Identity:</strong> IAM, SAML/OAuth, MFA</li>
+                            <li><strong>Infrastructure:</strong> Firewalls, VPNs, SSL/TLS</li>
+                             <li><strong>Tools:</strong> Nmap, Wireshark</li>
+                        </ul>
+                    </div>
+                     <div class="skill-card view-recruiter">
+                        <div class="skill-card-header">
+                             <i class="fas fa-code skill-icon"></i>
+                            <h3>Key Languages & Tools</h3>
+                        </div>
+                        <ul>
+                            <li>Python</li>
+                            <li>SQL</li>
+                            <li>Bash / PowerShell</li>
+                            <li>Git</li>
                         </ul>
                     </div>
                 </div>
@@ -376,7 +477,6 @@
                     <a href="https://linkedin.com/in/acreddy1997" target="_blank" class="icon"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com/AcReddy1997" target="_blank" class="icon"><i class="fab fa-github"></i></a>
                 </div>
-               
                 <p class="copyright">&copy; Arjuna C. Reddy. All rights reserved.</p>
             </div>
         </footer>

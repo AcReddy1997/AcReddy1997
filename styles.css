@@ -2,14 +2,15 @@
 --------------------
 1. Global Styles & Variables
 2. Navigation Bar
-3. Hero Section
+3. Hero Section & View Toggle
 4. Content Sections & Animations
 5. Experience Timeline
 6. Project Cards (with Flip Animation)
 7. Skills Section
-8. Certifications Section
-9. Footer
-10. Responsive Design (Media Queries)
+8. Education Section
+9. Certifications & Publications Section
+10. Footer
+11. Responsive Design (Media Queries)
 -------------------- */
 
 /* 1. Global Styles & Variables
@@ -67,6 +68,10 @@ main {
     margin: 0 auto;
 }
 
+ul {
+    list-style: none;
+}
+
 /* 2. Navigation Bar
 -------------------- */
 .navbar {
@@ -112,7 +117,6 @@ body.dark-mode .nav-logo {
 }
 
 .nav-menu {
-    list-style: none;
     display: flex;
     gap: 2rem;
 }
@@ -208,7 +212,7 @@ input:checked + .slider:before {
     font-size: 1.5rem;
 }
 
-/* 3. Hero Section
+/* 3. Hero Section & View Toggle
 -------------------- */
 .hero {
     min-height: 100vh;
@@ -255,6 +259,9 @@ body.dark-mode .hero-subtitle {
     color: var(--primary-color-light);
     font-weight: 600;
     transition: all 0.3s ease;
+    cursor: pointer;
+    background: none;
+    font-family: 'Poppins', sans-serif;
 }
 body.dark-mode .hero-button {
      border-color: var(--primary-color-dark);
@@ -268,6 +275,29 @@ body.dark-mode .hero-button {
 body.dark-mode .hero-button:hover {
     background-color: var(--primary-color-dark);
     color: var(--bg-color-dark);
+}
+
+.view-toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 0.5rem;
+    background-color: rgba(0,0,0,0.03);
+    border-radius: 50px;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+body.dark-mode .view-toggle-container {
+    background-color: rgba(255,255,255,0.05);
+}
+.toggle-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 /* 4. Content Sections & Animations
@@ -322,6 +352,24 @@ body.dark-mode #about p {
     transform: translateY(0);
 }
 
+/* View Toggling Logic */
+.view-recruiter {
+    display: none;
+}
+body.recruiter-mode-active .view-recruiter {
+    display: block;
+}
+body.recruiter-mode-active #experience .experience-timeline,
+body.recruiter-mode-active #projects .project-grid,
+body.recruiter-mode-active #skills .skills-container {
+    display: grid; /* Specific for grid/flex layouts where needed */
+}
+
+body.recruiter-mode-active .view-technical {
+    display: none;
+}
+
+
 /* 5. Experience Timeline
 -------------------- */
 .experience-timeline {
@@ -344,6 +392,9 @@ body.dark-mode .experience-timeline::after {
 .timeline-item {
     padding: 1rem 0 2rem 60px;
     position: relative;
+}
+.timeline-item:last-child {
+    padding-bottom: 0;
 }
 
 .timeline-dot {
@@ -382,9 +433,19 @@ body.dark-mode .timeline-date {
 body.dark-mode .company {
     color: var(--primary-color-dark);
 }
-.job-details {
+.job-details, .job-details-list {
     line-height: 1.7;
 }
+
+.job-details-list {
+    padding-left: 1.2rem;
+    margin-top: 0.5rem;
+    list-style: disc;
+}
+.job-details-list li {
+    margin-bottom: 0.5rem;
+}
+
 
 /* 6. Project Cards (with Flip Animation)
 -------------------- */
@@ -392,6 +453,7 @@ body.dark-mode .company {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    align-items: stretch;
 }
 
 .project-card {
@@ -475,34 +537,79 @@ body.dark-mode .skills-used span {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    text-align: center;
+    align-items: stretch; /* Fix for uneven card heights */
 }
-.skill-category {
+.skill-card {
+    display: flex; 
+    flex-direction: column; 
     padding: 2rem;
     background-color: var(--card-bg-light);
     border-radius: 15px;
     box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-body.dark-mode .skill-category {
+body.dark-mode .skill-card {
     background-color: var(--card-bg-dark);
     box-shadow: var(--shadow-dark);
 }
 
-.skill-category h3 {
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+body.dark-mode .skill-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 166, 237, 0.2);
+}
+
+.skill-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     margin-bottom: 1.5rem;
-    font-size: 1.5rem;
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     color: var(--primary-color-light);
 }
-body.dark-mode .skill-category h3 {
+body.dark-mode .skill-icon {
     color: var(--primary-color-dark);
 }
 
-.skill-category ul {
-    list-style: none;
-    line-height: 2;
+.skill-card h3 {
+    font-size: 1.5rem;
 }
 
-/* 8. Certifications Section
+.skill-card ul {
+    line-height: 2;
+    text-align: left;
+    flex-grow: 1; 
+}
+.skill-card ul li {
+    padding-left: 1rem;
+    position: relative;
+}
+.skill-card ul li::before {
+    content: '\f00c'; /* Font Awesome check icon */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: -5px;
+    color: var(--primary-color-light);
+}
+body.dark-mode .skill-card ul li::before {
+    color: var(--primary-color-dark);
+}
+
+/* 8. Education Section - uses Experience Timeline styles */
+#education .job-details {
+    padding-left: 1.2rem;
+}
+
+
+/* 9. Certifications & Publications Section
 -------------------- */
 .certifications-container {
     display: flex;
@@ -538,7 +645,44 @@ body.dark-mode .cert-item img {
     font-weight: 600;
 }
 
-/* 9. Footer
+.publication-item {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--card-bg-light);
+    border-radius: 15px;
+    box-shadow: var(--shadow-light);
+}
+body.dark-mode .publication-item {
+    background-color: var(--card-bg-dark);
+    box-shadow: var(--shadow-dark);
+}
+.publication-item h3 {
+    font-size: 1.5rem;
+}
+.publication-item p {
+    margin: 0.5rem 0 1rem 0;
+    color: var(--secondary-color-light);
+}
+body.dark-mode .publication-item p {
+    color: var(--secondary-color-dark);
+}
+.publication-link {
+    font-weight: 600;
+    color: var(--primary-color-light);
+    text-decoration: none;
+}
+body.dark-mode .publication-link {
+    color: var(--primary-color-dark);
+}
+.publication-link .fa-external-link-alt {
+    margin-left: 0.5rem;
+    font-size: 0.8em;
+}
+
+
+/* 10. Footer
 -------------------- */
 footer {
     padding: 5rem 0;
@@ -549,20 +693,22 @@ body.dark-mode footer {
     background-color: #1a1a1a;
 }
 .footer-content {
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
+    padding: 0 5%;
 }
 .footer-content h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
 }
-.footer-content p {
+.footer-content > p {
     color: var(--secondary-color-light);
     margin-bottom: 2rem;
 }
-body.dark-mode .footer-content p {
+body.dark-mode .footer-content > p {
      color: var(--secondary-color-dark);
 }
+
 .social-icons {
     margin-bottom: 2rem;
 }
@@ -583,17 +729,7 @@ body.dark-mode .social-icons .icon {
 body.dark-mode .social-icons .icon:hover {
      color: var(--primary-color-dark);
 }
-.visitor-counter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    color: var(--secondary-color-light);
-    margin-bottom: 2rem;
-}
-body.dark-mode .visitor-counter {
-     color: var(--secondary-color-dark);
-}
+
 .copyright {
     font-size: 0.9rem;
     color: var(--secondary-color-light) !important;
@@ -602,7 +738,7 @@ body.dark-mode .copyright {
     color: var(--secondary-color-dark) !important;
 }
 
-/* 10. Responsive Design
+/* 11. Responsive Design
 -------------------- */
 @media (max-width: 768px) {
     .nav-menu-container {
@@ -660,5 +796,9 @@ body.dark-mode .copyright {
         left: -1px;
         width: 22px;
         height: 22px;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
     }
 }
