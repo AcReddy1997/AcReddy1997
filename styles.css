@@ -359,14 +359,20 @@ body.dark-mode #about p {
 body.recruiter-mode-active .view-recruiter {
     display: block;
 }
-body.recruiter-mode-active #experience .experience-timeline,
-body.recruiter-mode-active #projects .project-grid,
-body.recruiter-mode-active #skills .skills-container {
-    display: grid; /* Specific for grid/flex layouts where needed */
-}
-
 body.recruiter-mode-active .view-technical {
     display: none;
+}
+/* Ensure grid containers keep their grid display property when toggled */
+body.recruiter-mode-active .experience-timeline.view-recruiter,
+body:not(.recruiter-mode-active) .experience-timeline.view-technical {
+    display: block;
+}
+
+body.recruiter-mode-active .project-grid.view-recruiter,
+body.recruiter-mode-active .skills-container.view-recruiter,
+body:not(.recruiter-mode-active) .project-grid.view-technical,
+body:not(.recruiter-mode-active) .skills-container.view-technical {
+    display: grid;
 }
 
 
